@@ -1,0 +1,36 @@
+<article class="stack-card">
+  <div class="card-body">
+    <div class="card-top">
+      <div class="title-row">
+        <h3>{{ item().name }}</h3>
+        <span class="level" [attr.data-level]="item().level">{{ item().level }}</span>
+      </div>
+      <p>{{ item().description }}</p>
+    </div>
+
+    <ul class="tech-row">
+      <li class="tag category">{{ item().category }}</li>
+      @for (tag of item().tags; track tag) {
+        <li class="tag">{{ tag }}</li>
+      }
+    </ul>
+  </div>
+
+  @if (item().snippet) {
+    <div class="card-preview" aria-hidden="true">
+      <div class="mini-terminal">
+        <div class="terminal-chrome">
+          <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          @if (item().snippetTitle) {
+            <span class="terminal-title">{{ item().snippetTitle }}</span>
+          }
+        </div>
+        <pre><code>{{ item().snippet }}</code></pre>
+      </div>
+    </div>
+  }
+</article>

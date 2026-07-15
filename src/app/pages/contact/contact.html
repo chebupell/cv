@@ -1,0 +1,128 @@
+<section class="shell contact-page">
+  <header class="page-header">
+    <h1>Let's build something together</h1>
+    <p class="lede">
+      Whether you have a specific project in mind or just want to chat about technical architecture,
+      my inbox is always open.
+    </p>
+  </header>
+
+  <div class="contact-layout">
+    <div class="contact-aside">
+      <aside class="terminal" aria-label="Contact information terminal">
+        <div class="terminal-chrome">
+          <div class="traffic">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="terminal-title">contact_info.sh</span>
+        </div>
+        <pre class="terminal-body"><code><span class="prompt">mikhail@dev:~$</span> cat ./connections.json
+&#123;
+  <span class="key">"email"</span>: <span class="string">"{{ socialHandle('email') }}"</span>,
+  <span class="key">"telegram"</span>: <span class="string">"{{ socialHandle('telegram') }}"</span>,
+  <span class="key">"linkedin"</span>: <span class="string">"{{ socialHandle('linkedin') }}"</span>,
+  <span class="key">"github"</span>: <span class="string">"{{ socialHandle('github') }}"</span>,
+  <span class="key">"status"</span>: <span class="string">"Available for projects"</span>
+&#125;
+<span class="prompt">mikhail@dev:~$</span> echo $CURRENT_LOCATION
+<span class="location-line">{{ profile.location.city }}</span><span class="cursor" aria-hidden="true"></span></code></pre>
+      </aside>
+
+      <div class="map-card">
+        <iframe
+          class="map-frame"
+          title="Map of Gomel, Belarus"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          [src]="mapUrl"
+        ></iframe>
+        <div class="map-badge">
+          <svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
+            />
+          </svg>
+          <div>
+            <p class="map-city">{{ profile.location.city }}</p>
+            <p class="map-zone">{{ profile.location.timezone }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="message-card" (ngSubmit)="sendMessage()">
+      <div class="form-heading">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M4 6h16v12H4zM4 7l8 6 8-6"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <h2>Direct Message</h2>
+      </div>
+
+      <div class="field-row">
+        <label class="field">
+          <span>FULL NAME</span>
+          <input
+            type="text"
+            name="fullName"
+            [(ngModel)]="fullName"
+            placeholder="John Doe"
+            autocomplete="name"
+          />
+        </label>
+        <label class="field">
+          <span>EMAIL ADDRESS</span>
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="john@example.com"
+            autocomplete="email"
+            required
+          />
+        </label>
+      </div>
+
+      <label class="field">
+        <span>PROJECT SUBJECT</span>
+        <select name="subject" [(ngModel)]="subject">
+          @for (option of subjects; track option) {
+            <option [value]="option">{{ option }}</option>
+          }
+        </select>
+      </label>
+
+      <label class="field">
+        <span>YOUR MESSAGE</span>
+        <textarea
+          name="message"
+          [(ngModel)]="message"
+          rows="7"
+          placeholder="Describe your vision or inquiry..."
+          required
+        ></textarea>
+      </label>
+
+      <div class="form-footer">
+        <p class="eta">Estimated response: ~24h</p>
+        <button hlmBtn size="lg" class="send-btn" type="submit">
+          Execute Send
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />
+          </svg>
+        </button>
+      </div>
+
+      @if (submitted()) {
+        <p class="form-note" role="status">Opening your mail client…</p>
+      }
+    </form>
+  </div>
+</section>

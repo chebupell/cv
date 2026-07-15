@@ -1,0 +1,68 @@
+<section class="shell stack-page">
+  <header class="page-header">
+    <p class="eyebrow">TECHNICAL ECOSYSTEM</p>
+    <h1>Tech Stack</h1>
+    <p class="lede">
+      Tools I use to ship type-safe interfaces, reliable APIs, and maintainable product foundations.
+    </p>
+  </header>
+
+  <div class="overview-card">
+    <div class="overview-copy">
+      <h2>{{ profile.ecosystemTitle }}</h2>
+      <p>{{ profile.ecosystemBody }}</p>
+      <ul class="tag-row">
+        @for (tag of profile.ecosystemTags; track tag) {
+          <li class="tag">{{ tag }}</li>
+        }
+      </ul>
+      <p class="verified">
+        <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+        </svg>
+        Tech-Stack Verified
+      </p>
+    </div>
+    <div class="overview-stats">
+      <p class="stats-label">STACK COVERAGE</p>
+      <div class="stats-grid">
+        <div>
+          <p class="stat-value">{{ profile.stack.length }}</p>
+          <p class="stat-label">Core technologies</p>
+        </div>
+        <div>
+          <p class="stat-value">4</p>
+          <p class="stat-label">Focus areas</p>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true">
+        <span class="progress-bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filters" role="tablist" aria-label="Filter stack by category">
+    @for (filter of filters; track filter) {
+      <button
+        type="button"
+        class="filter-chip"
+        role="tab"
+        [class.is-active]="activeFilter() === filter"
+        [attr.aria-selected]="activeFilter() === filter"
+        (click)="setFilter(filter)"
+      >
+        {{ filter }}
+      </button>
+    }
+  </div>
+
+  @if (filteredStack().length > 0) {
+    <div class="stack-grid">
+      @for (item of filteredStack(); track item.name) {
+        <app-stack-card [item]="item" />
+      }
+    </div>
+  } @else {
+    <p class="empty">No technologies in this category yet.</p>
+  }
+</section>

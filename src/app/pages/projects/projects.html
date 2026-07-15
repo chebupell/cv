@@ -1,0 +1,35 @@
+<section class="shell projects-page">
+  <header class="page-header">
+    <p class="eyebrow">SELECTED WORK</p>
+    <h1>Projects</h1>
+    <p class="lede">
+      Flagship builds from my GitHub — interactive learning, fullstack dashboards, and type-safe
+      product work.
+    </p>
+  </header>
+
+  <div class="filters" role="tablist" aria-label="Filter projects by stack">
+    @for (filter of filters(); track filter) {
+      <button
+        type="button"
+        class="filter-chip"
+        role="tab"
+        [class.is-active]="activeFilter() === filter"
+        [attr.aria-selected]="activeFilter() === filter"
+        (click)="setFilter(filter)"
+      >
+        {{ filter }}
+      </button>
+    }
+  </div>
+
+  @if (filteredProjects().length > 0) {
+    <div class="projects-list">
+      @for (project of filteredProjects(); track project.name) {
+        <app-featured-repo [project]="project" [label]="projectLabel(project.featured)" />
+      }
+    </div>
+  } @else {
+    <p class="empty">No projects match this filter yet.</p>
+  }
+</section>
