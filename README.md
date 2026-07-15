@@ -4,7 +4,7 @@ Personal portfolio of **Mikhail** (chebupell) — Frontend / Fullstack developer
 
 **Live site:** [https://mikhailportfol.netlify.app/](https://mikhailportfol.netlify.app/)
 
-![Portfolio homepage](docs/screenshot.png)
+![Uploading {48A87DF4-0C9E-469C-9EF6-CA26A6E7179C}.png…]()
 
 ## Stack
 
