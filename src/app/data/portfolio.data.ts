@@ -236,5 +236,4 @@ export class Dashboard {
     mapEmbedUrl:
       'https://www.openstreetmap.org/export/embed.html?bbox=30.90%2C52.38%2C31.10%2C52.50&layer=mapnik&marker=52.4412%2C30.9878',
   },
-  resumeUrl: '#',
 };

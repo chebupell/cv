@@ -58,5 +58,4 @@ export interface PortfolioProfile {
     timezone: string;
     mapEmbedUrl: string;
   };
-  resumeUrl: string;
 }
