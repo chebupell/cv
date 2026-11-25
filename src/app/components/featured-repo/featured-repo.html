@@ -49,6 +49,15 @@
     </div>
 
     <div class="featured-actions">
+      @if (caseStudyRoute(project().name); as route) {
+        <a
+          [routerLink]="route"
+          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-secondary-fixed text-primary font-label-md text-label-md font-bold hover:opacity-90 transition-opacity"
+        >
+          Case Study
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      }
       <a
         class="source-link"
         [href]="project().repoUrl"
