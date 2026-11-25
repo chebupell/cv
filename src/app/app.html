@@ -1,42 +1,187 @@
-<div class="site">
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" routerLink="/">{{ profile.brand }}</a>
-
-      <nav class="nav" aria-label="Main navigation">
-        <a
-          class="nav-link"
-          routerLink="/"
-          routerLinkActive="is-active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Home
+<div class="min-h-screen flex flex-col bg-surface text-on-surface">
+  <!-- Sticky Site Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-variant">
+    <div class="h-16 max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop flex items-center justify-between">
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-2">
+        <a class="brand flex items-center gap-1.5 focus:outline-none group" routerLink="/">
+          <span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary">M / DEV</span>
+          <span class="inline-block w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(198,242,106,0.8)]"></span>
         </a>
-        <a class="nav-link" routerLink="/projects" routerLinkActive="is-active">Projects</a>
-        <a class="nav-link" routerLink="/stack" routerLinkActive="is-active">Tech Stack</a>
-        <a class="nav-link" routerLink="/contact" routerLinkActive="is-active">Contact</a>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 lg:gap-8" aria-label="Main navigation">
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" routerLink="/" fragment="work">{{ 'NAV.WORK' | translate }}</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" routerLink="/" fragment="services">{{ 'NAV.SERVICES' | translate }}</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" routerLink="/" fragment="about">{{ 'NAV.ABOUT' | translate }}</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" routerLink="/" fragment="process">{{ 'NAV.PROCESS' | translate }}</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" routerLink="/" fragment="stack">{{ 'NAV.STACK' | translate }}</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" routerLink="/" fragment="contact">{{ 'NAV.CONTACT' | translate }}</a>
       </nav>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <!-- Language Switcher -->
+        <div class="flex items-center p-0.5 rounded-full border border-surface-variant bg-surface-container-low">
+          <button
+            type="button"
+            (click)="setLang('EN')"
+            [class.bg-surface-container-lowest]="currentLang() === 'en'"
+            [class.font-bold]="currentLang() === 'en'"
+            [class.shadow-xs]="currentLang() === 'en'"
+            [class.text-primary]="currentLang() === 'en'"
+            [class.text-on-surface-variant]="currentLang() !== 'en'"
+            class="px-2 py-0.5 font-label-sm text-label-sm transition-colors rounded-full"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            (click)="setLang('RU')"
+            [class.bg-surface-container-lowest]="currentLang() === 'ru'"
+            [class.font-bold]="currentLang() === 'ru'"
+            [class.shadow-xs]="currentLang() === 'ru'"
+            [class.text-primary]="currentLang() === 'ru'"
+            [class.text-on-surface-variant]="currentLang() !== 'ru'"
+            class="px-2 py-0.5 font-label-sm text-label-sm transition-colors rounded-full"
+          >
+            RU
+          </button>
+        </div>
+
+        <!-- CTA Button -->
+        <a
+          routerLink="/"
+          fragment="contact"
+          class="hidden sm:inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-secondary-fixed text-primary font-headline-sm text-label-md font-semibold tracking-tight transition-opacity hover:opacity-90 shadow-xs"
+        >
+          {{ 'CTA.TALK' | translate }}
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button
+          type="button"
+          (click)="toggleMobileMenu()"
+          class="md:hidden w-10 h-10 flex items-center justify-center text-primary rounded-lg active:bg-surface-container-high transition-colors"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="material-symbols-outlined text-[24px]">{{ mobileMenuOpen() ? 'close' : 'menu' }}</span>
+        </button>
+
+        <!-- Profile Avatar Indicator -->
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        </div>
+      </div>
     </div>
+
+    <!-- Mobile Drawer Menu Dropdown -->
+    @if (mobileMenuOpen()) {
+      <div class="md:hidden w-full bg-surface/98 backdrop-blur-2xl border-b border-surface-variant px-margin py-space-md flex flex-col gap-space-md shadow-lg">
+        <div class="flex flex-col gap-1">
+          <a (click)="closeMobileMenu()" routerLink="/" fragment="work" class="font-headline-sm text-headline-sm text-primary py-2.5 flex items-center justify-between border-b border-surface-container">
+            <span>Work</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">01</span>
+          </a>
+          <a (click)="closeMobileMenu()" routerLink="/" fragment="services" class="font-headline-sm text-headline-sm text-primary py-2.5 flex items-center justify-between border-b border-surface-container">
+            <span>Services</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">02</span>
+          </a>
+          <a (click)="closeMobileMenu()" routerLink="/" fragment="about" class="font-headline-sm text-headline-sm text-primary py-2.5 flex items-center justify-between border-b border-surface-container">
+            <span>About</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">03</span>
+          </a>
+          <a (click)="closeMobileMenu()" routerLink="/" fragment="process" class="font-headline-sm text-headline-sm text-primary py-2.5 flex items-center justify-between border-b border-surface-container">
+            <span>Process</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">04</span>
+          </a>
+          <a (click)="closeMobileMenu()" routerLink="/" fragment="stack" class="font-headline-sm text-headline-sm text-primary py-2.5 flex items-center justify-between border-b border-surface-container">
+            <span>Stack</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">05</span>
+          </a>
+          <a (click)="closeMobileMenu()" routerLink="/" fragment="contact" class="font-headline-sm text-headline-sm text-primary py-2.5 flex items-center justify-between">
+            <span>Contact</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">06</span>
+          </a>
+        </div>
+        <div class="pt-2">
+          <a
+            (click)="closeMobileMenu()"
+            routerLink="/"
+            fragment="contact"
+            class="w-full h-12 bg-secondary-fixed text-primary font-headline-sm text-label-md font-bold flex items-center justify-center rounded-lg gap-2 shadow-xs"
+          >
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span>{{ 'CTA.TALK' | translate }}</span>
+          </a>
+        </div>
+      </div>
+    }
   </header>
 
-  <main>
+  <!-- Main Viewport Router Outlet -->
+  <main class="flex-1 pt-16">
     <router-outlet />
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-inner">
-      <p class="footer-copy">© {{ year }} Mikhail (chebupell). Built for performance.</p>
-      <div class="footer-links">
-        <a [href]="social('github')?.url" target="_blank" rel="noopener noreferrer">Github</a>
-        <a [href]="social('linkedin')?.url" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a [href]="social('github')?.url + '/cv'" target="_blank" rel="noopener noreferrer">
-          Source
-        </a>
+  <!-- Editorial Site Footer -->
+  <footer class="w-full bg-surface-container-low border-t border-surface-variant">
+    <div class="max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop py-space-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-space-xl">
+        <div class="md:col-span-5 flex flex-col gap-3">
+          <div class="flex items-center gap-1.5">
+            <span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary">M / DEV.</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(198,242,106,0.8)]"></span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-sm leading-relaxed">
+            Independent web developer crafting thoughtful websites, interactive products, and bespoke digital architecture.
+          </p>
+          <div class="pt-2 flex items-center gap-2 text-on-surface-variant font-code-meta text-code-meta">
+            <span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
+            <span>Gomel, Belarus · Available Worldwide</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 flex flex-col gap-3">
+          <span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant font-bold">Navigation</span>
+          <div class="flex flex-col gap-2">
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-secondary transition-colors" routerLink="/" fragment="work">Work &amp; Archives</a>
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-secondary transition-colors" routerLink="/" fragment="services">Engineering Services</a>
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-secondary transition-colors" routerLink="/" fragment="about">About Studio</a>
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-secondary transition-colors" routerLink="/" fragment="process">Methodology</a>
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-secondary transition-colors" routerLink="/" fragment="stack">Tech Stack</a>
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-secondary transition-colors" routerLink="/" fragment="contact">Initiate Project</a>
+            <a class="font-body-sm text-body-sm text-on-surface hover:text-secondary transition-colors" [href]="social('github')?.url" target="_blank" rel="noopener noreferrer">Source Code / GitHub</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 flex flex-col gap-3">
+          <span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant font-bold">Direct Inquiries</span>
+          <div class="flex flex-col gap-2 font-body-sm text-body-sm">
+            <a class="text-on-surface hover:text-secondary transition-colors flex items-center gap-2" [href]="social('telegram')?.url" target="_blank" rel="noopener noreferrer">
+              <span class="material-symbols-outlined text-[18px]">send</span>
+              <span class="font-code-meta text-code-meta text-on-surface-variant">TG:</span> @Itschebupelli
+            </a>
+            <a class="text-on-surface hover:text-secondary transition-colors flex items-center gap-2" [href]="social('email')?.url">
+              <span class="material-symbols-outlined text-[18px]">mail</span>
+              <span class="font-code-meta text-code-meta text-on-surface-variant">EMAIL:</span> {{ profile.socials[3].url.replace('mailto:', '') }}
+            </a>
+          </div>
+          <div class="mt-4 p-3 rounded-lg border border-surface-variant bg-surface-container-lowest inline-flex items-center gap-2 self-start">
+            <span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+            <span class="font-label-sm text-label-sm text-primary uppercase font-bold">Available for Q2 Projects</span>
+          </div>
+        </div>
       </div>
-      <p class="footer-status">
-        <span class="status-dot" aria-hidden="true"></span>
-        System Operational
-      </p>
+
+      <div class="pt-space-md border-t border-surface-variant flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-body-sm text-body-sm text-on-surface-variant">© {{ year }} Mikhail. Built with clean semantic code.</p>
+        <div class="flex items-center gap-2 text-on-surface-variant font-code-meta text-code-meta">
+          <span class="w-2 h-2 rounded-full bg-secondary-fixed inline-block"></span>
+          <span>SYSTEM OPERATIONAL</span>
+        </div>
+      </div>
     </div>
   </footer>
 </div>

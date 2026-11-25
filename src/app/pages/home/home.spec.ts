@@ -14,6 +14,6 @@ describe('HomePage', () => {
     const fixture = TestBed.createComponent(HomePage);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Mikhail');
+    expect(compiled.querySelector('h1')?.textContent).toContain('I build digital experiences');
   });
 });

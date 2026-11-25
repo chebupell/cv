@@ -1,0 +1,22 @@
+{
+  "NAV": {
+    "WORK": "Work",
+    "SERVICES": "Services",
+    "ABOUT": "About",
+    "PROCESS": "Process",
+    "STACK": "Stack",
+    "CONTACT": "Contact"
+  },
+  "CTA": {
+    "TALK": "Let's talk"
+  },
+  "HOME": {
+    "HERO_TITLE": "I build digital experiences that make an impact.",
+    "HERO_SUBTITLE": "Independent web developer crafting thoughtful websites, interactive products, and bespoke digital architecture for discerning brands.",
+    "CTA_EXPLORE": "Explore my work",
+    "CTA_DISCUSS": "Let's discuss a project"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© {{year}} Mikhail. Built with clean semantic code."
+  }
+}

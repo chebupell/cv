@@ -1,177 +1,801 @@
-<!-- Hero -->
-<section id="home" class="shell hero">
-  <div class="hero-copy">
-    <p class="status-badge">
-      <span class="status-dot" aria-hidden="true"></span>
-      AVAILABLE FOR WORK
-    </p>
+<!-- ========================================== -->
+<!-- 01. HERO SECTION                           -->
+<!-- ========================================== -->
+<section class="relative w-full max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop pt-8 md:pt-16 lg:pt-20 pb-16 md:pb-24 lg:pb-28">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+    <div class="lg:col-span-8 flex flex-col items-start">
+      <!-- Status & Location Pill Badges -->
+      <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-surface-variant/60 rounded-full">
+          <span class="w-2 h-2 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(198,242,106,0.9)] animate-pulse"></span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Available for new projects · Q2 2025</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-low/70 rounded-full text-on-surface-variant">
+          <span class="material-symbols-outlined text-[14px]">location_on</span>
+          <span class="font-label-sm text-label-sm uppercase tracking-widest">Gomel, Belarus (UTC+3)</span>
+        </div>
+      </div>
 
-    <h1 class="hero-title">
-      Hi, I'm <span class="accent">{{ profile.name }}</span>,
-      <span class="hero-role">{{ profile.role }}</span>
-    </h1>
+      <!-- Main Expressive Headline -->
+      <h1 class="font-display text-primary tracking-tight font-bold mb-6 md:mb-8 leading-[0.98]">
+        {{ 'HOME.HERO_TITLE' | translate }}<span class="text-secondary">.</span>
+      </h1>
 
-    <p class="hero-summary">{{ profile.summary }}</p>
+      <!-- Bilingual Intro / Subheading -->
+      <div class="max-w-2xl flex flex-col gap-3 mb-8 md:mb-10">
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          {{ 'HOME.HERO_SUBTITLE' | translate }}
+        </p>
+        <p class="font-body-md text-body-md text-on-surface-variant/80 italic leading-relaxed">
+          Создаю современные сайты и веб-приложения для бизнеса — от идеи и дизайна до разработки и запуска.
+        </p>
+      </div>
 
-    <div class="hero-actions">
-      <a hlmBtn size="lg" class="cta-primary" routerLink="/projects">
-        View Projects
-        <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M5 12h14M13 6l6 6-6 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </a>
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+        <a
+          class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-secondary-fixed text-primary font-headline-sm text-label-md font-semibold rounded-lg shadow-sm hover:opacity-95 active:scale-[0.99] transition-all"
+          routerLink="/"
+          fragment="work"
+        >
+          <span>Explore my work</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+        </a>
+        <a
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-on-primary font-headline-sm text-label-md font-semibold rounded-lg hover:bg-primary-container active:scale-[0.99] transition-all"
+          routerLink="/"
+          fragment="contact"
+        >
+          <span>Let's discuss a project</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
 
-      <a hlmBtn variant="outline" size="lg" class="cta-secondary" routerLink="/contact">
-        Get in touch
-      </a>
+    <!-- Hero Visual Telemetry Card (Asymmetric Offset) -->
+    <div class="lg:col-span-4 flex flex-col gap-4 w-full">
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between relative overflow-hidden">
+        <div class="flex items-center justify-between mb-6 pb-4 bg-surface-container-low -mx-6 -mt-6 p-4 border-b border-surface-variant">
+          <span class="font-code-meta text-code-meta text-on-surface-variant font-bold">ENGINEERING SPEC // 2025</span>
+          <span class="inline-flex items-center gap-1 font-code-meta text-code-meta text-secondary font-bold">
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> ACTIVE
+          </span>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="p-4 bg-surface-container-low rounded-lg">
+            <div class="flex items-center justify-between text-on-surface-variant font-code-meta text-code-meta mb-1">
+              <span>CORE STACK</span>
+              <span class="text-primary font-bold">PRODUCTION</span>
+            </div>
+            <p class="font-headline-sm text-headline-sm text-primary font-bold">Next.js · TypeScript · Angular</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Tailwind CSS · REST &amp; SQL</p>
+          </div>
+
+          <div class="p-4 bg-surface-container-low rounded-lg flex items-center justify-between">
+            <div>
+              <span class="block font-code-meta text-code-meta text-on-surface-variant">AUDIT VELOCITY</span>
+              <span class="font-headline-md text-headline-md font-bold text-primary">99<span class="text-secondary text-headline-sm font-headline-sm">/100</span></span>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-secondary-fixed/30 flex items-center justify-center">
+              <span class="material-symbols-outlined text-secondary text-[24px]">speed</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-surface-container-low rounded-lg">
+            <span class="block font-code-meta text-code-meta text-on-surface-variant mb-1 uppercase font-bold">Craft Manifesto</span>
+            <p class="font-body-sm text-body-sm text-on-surface font-medium leading-relaxed">
+              "No slow templates. Zero bloated page-builders. Pure semantic code built for high conversions."
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <aside class="terminal" aria-label="About me code snippet">
-    <div class="terminal-chrome">
-      <div class="traffic">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-      </div>
-      <span class="terminal-title">about_me.txt</span>
+  <!-- Digital Craft Metrics Strip -->
+  <div class="mt-12 md:mt-16 bg-surface-container-low border border-surface-variant/80 rounded-xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="flex flex-col gap-1">
+      <span class="font-code-meta text-code-meta text-secondary uppercase font-bold">Architecture</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-primary">100% Bespoke</span>
+      <span class="font-body-sm text-body-sm text-on-surface-variant">Tailored to exact requirements</span>
     </div>
-    <pre class="terminal-body"><code><span class="code-prompt">$</span> cat about_me.txt
-
-Mikhail: &#123;
-  focus: [<span class="code-string">"TypeScript"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Angular"</span>],
-  obsessions: [<span class="code-string">"Clean Code"</span>, <span class="code-string">"Performance"</span>],
-  location: <span class="code-string">"Cyber-Space"</span>,
-  current_goal: <span class="code-string">"Building scalable ecosystems"</span>
-&#125;</code></pre>
-  </aside>
+    <div class="flex flex-col gap-1">
+      <span class="font-code-meta text-code-meta text-secondary uppercase font-bold">Ecosystem</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-primary">TypeScript &amp; Next</span>
+      <span class="font-body-sm text-body-sm text-on-surface-variant">Scalable, typed components</span>
+    </div>
+    <div class="flex flex-col gap-1">
+      <span class="font-code-meta text-code-meta text-secondary uppercase font-bold">Optimization</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-primary">Speed &amp; Technical SEO</span>
+      <span class="font-body-sm text-body-sm text-on-surface-variant">Rapid First Contentful Paint</span>
+    </div>
+    <div class="flex flex-col gap-1">
+      <span class="font-code-meta text-code-meta text-secondary uppercase font-bold">Lighthouse Benchmark</span>
+      <span class="font-headline-sm text-headline-sm font-bold text-primary">Score 98+</span>
+      <span class="font-body-sm text-body-sm text-on-surface-variant">Accessibility &amp; performance tuned</span>
+    </div>
+  </div>
 </section>
 
-<!-- Technical ecosystem -->
-<section id="home-stack" class="shell section">
-  <div class="ecosystem-card">
-    <div class="ecosystem-main">
-      <div class="ecosystem-heading">
-        <svg class="icon-sm text-primary" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M8 3v3M16 3v3M4.5 9h15M6 6h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"
-            stroke="currentColor"
-            stroke-width="1.75"
-            stroke-linecap="round"
-          />
-        </svg>
-        <h2>{{ profile.ecosystemTitle }}</h2>
+<!-- ========================================== -->
+<!-- 02. SELECTED WORK SECTION                  -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-low/60 py-16 md:py-24 border-y border-surface-variant/60" id="work">
+  <div class="max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop">
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2.5 h-2.5 bg-secondary-fixed rounded-sm"></span>
+          <span class="font-code-meta text-code-meta uppercase tracking-wider text-on-surface-variant font-bold">PORTFOLIO INDEX</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">Selected work.</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-xl">
+          A curated selection of digital products, commercial platforms, and architectural web concepts.
+        </p>
       </div>
-      <p class="ecosystem-body">{{ profile.ecosystemBody }}</p>
-      <ul class="tag-row" aria-label="Tech stack">
-        @for (tag of profile.ecosystemTags; track tag) {
-          <li class="tag">{{ tag }}</li>
-        }
-      </ul>
-      <p class="ecosystem-footnote">
-        <svg class="icon-xs text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
-        </svg>
-        Tech-Stack Verified
-      </p>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <button
+          type="button"
+          (click)="setCategory('all')"
+          [class.bg-primary]="selectedCategory() === 'all'"
+          [class.text-on-primary]="selectedCategory() === 'all'"
+          [class.bg-surface-container-lowest]="selectedCategory() !== 'all'"
+          [class.text-on-surface]="selectedCategory() !== 'all'"
+          class="px-4 py-2 rounded-lg font-label-md text-label-md transition-colors shadow-xs"
+        >
+          All Projects (3)
+        </button>
+        <button
+          type="button"
+          (click)="setCategory('commercial')"
+          [class.bg-primary]="selectedCategory() === 'commercial'"
+          [class.text-on-primary]="selectedCategory() === 'commercial'"
+          [class.bg-surface-container-lowest]="selectedCategory() !== 'commercial'"
+          [class.text-on-surface]="selectedCategory() !== 'commercial'"
+          class="px-4 py-2 rounded-lg font-label-md text-label-md transition-colors shadow-xs"
+        >
+          Commercial Websites
+        </button>
+        <button
+          type="button"
+          (click)="setCategory('apps')"
+          [class.bg-primary]="selectedCategory() === 'apps'"
+          [class.text-on-primary]="selectedCategory() === 'apps'"
+          [class.bg-surface-container-lowest]="selectedCategory() !== 'apps'"
+          [class.text-on-surface]="selectedCategory() !== 'apps'"
+          class="px-4 py-2 rounded-lg font-label-md text-label-md transition-colors shadow-xs"
+        >
+          Web Applications
+        </button>
+      </div>
     </div>
 
-    <div class="github-insights">
-      <p class="insights-label">
-        <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path
-            d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .26.18.58.69.48A10 10 0 0 0 12 2z"
-          />
-        </svg>
-        GITHUB INSIGHTS
-      </p>
-      <div class="insights-stats">
-        <div>
-          <p class="stat-value">{{ profile.githubRepos }}</p>
-          <p class="stat-label">Repositories</p>
-        </div>
-        <div>
-          <p class="stat-value">{{ profile.githubAchievements }}</p>
-          <p class="stat-label">Major Achievements</p>
+    <!-- FEATURED PROJECT 01: BÉRÉG (Hero full-width card) -->
+    @if (selectedCategory() === 'all' || selectedCategory() === 'commercial') {
+      <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden shadow-sm mb-8 md:mb-12 flex flex-col group hover:border-secondary transition-all">
+        <div class="p-6 md:p-8 lg:p-10 flex flex-col lg:flex-row justify-between gap-8">
+          <div class="lg:w-1/2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4 flex-wrap">
+                <span class="font-code-meta text-code-meta px-2.5 py-1 bg-surface-container-low text-primary font-bold rounded">01 // FEATURED CONCEPT</span>
+                <span class="font-code-meta text-code-meta px-2.5 py-1 bg-secondary-fixed text-primary font-bold rounded">HOSPITALITY SHOWCASE</span>
+              </div>
+              <h3 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mb-3">BÉRÉG</h3>
+              <p class="font-headline-sm text-headline-sm text-secondary font-medium mb-4">Gastronomic Restaurant Experience &amp; Reservation Flow</p>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                A conceptual web experience for a high-end European restaurant, uniting tactile editorial aesthetics, real-time table reservation orchestration, and curated wine-pairing discovery. Designed to maximize culinary storytelling and conversion rates.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="p-4 bg-surface-container-low rounded-xl">
+                <span class="block font-code-meta text-code-meta uppercase text-primary font-bold mb-1">Architecture Highlights</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Fluid culinary catalog transitions, integrated reservation state logic, and mobile-optimized micro-interactions.</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 pt-2">
+                <span class="px-3 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">Next.js</span>
+                <span class="px-3 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">React</span>
+                <span class="px-3 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">TypeScript</span>
+                <span class="px-3 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">Framer Motion</span>
+              </div>
+              <div class="pt-2">
+                <a
+                  routerLink="/projects/bereg"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary font-headline-sm text-label-md font-semibold rounded-lg hover:bg-primary-container transition-colors shadow-xs"
+                >
+                  <span>View Case Study</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Visual Frame -->
+          <div class="lg:w-1/2 flex flex-col justify-center">
+            <a routerLink="/projects/bereg" class="block group/frame">
+              <div class="relative w-full rounded-xl overflow-hidden bg-surface-container border border-surface-variant/80 shadow-sm flex flex-col transition-transform duration-300 group-hover/frame:scale-[1.01]">
+                <!-- Browser Window Header Bar -->
+                <div class="flex items-center justify-between px-3.5 py-2.5 bg-surface-container-low border-b border-surface-variant/80">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                  </div>
+                  <span class="font-code-meta text-code-meta text-on-surface-variant">bereg-restaurant.com</span>
+                  <span class="font-code-meta text-code-meta text-secondary font-bold">Case Study</span>
+                </div>
+                <img
+                  src="/images/projects/bereg-mockup.png"
+                  alt="BÉRÉG Restaurant Interface Mockup"
+                  class="w-full aspect-[16/10] object-cover object-top block"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="progress" aria-hidden="true">
-        <span class="progress-bar"></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Core principles -->
-<section class="shell section principles">
-  <div class="section-heading">
-    <h2>Core Principles</h2>
-    <span class="heading-rule" aria-hidden="true"></span>
-  </div>
-
-  <div class="principles-grid">
-    @for (item of profile.principles; track item.title) {
-      <article class="principle-card">
-        <div class="principle-icon" [attr.data-icon]="item.icon">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path [attr.d]="principleIconPath(item.icon)" />
-          </svg>
-        </div>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-      </article>
     }
+
+    <!-- 2-COLUMN GRID: PROJECTS 02 & 03 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- PROJECT 02: SkillsZen -->
+      @if (selectedCategory() === 'all' || selectedCategory() === 'apps') {
+        <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden shadow-sm flex flex-col justify-between group hover:border-secondary transition-all">
+          <div class="p-6 md:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-code-meta text-code-meta px-2.5 py-1 bg-surface-container-low text-primary font-bold rounded">02 // WEB APPLICATION</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">EdTech Platform</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary font-bold mb-2">SkillsZen</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Interactive digital learning application engineered for seamless progress tracking, multi-speed video module streaming, and modular curriculum management.
+            </p>
+            <div class="flex flex-wrap items-center gap-2 mb-6">
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">React 19</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">TypeScript</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">Video Modules</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="px-6 md:px-8 pb-6 md:pb-8 flex flex-col gap-4">
+            <a routerLink="/projects/skillszen" class="block group/frame">
+              <div class="rounded-xl overflow-hidden bg-surface-container border border-surface-variant/80 shadow-sm flex flex-col transition-transform duration-300 group-hover/frame:scale-[1.01]">
+                <div class="flex items-center justify-between px-3 py-2 bg-surface-container-low border-b border-surface-variant/80">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                  </div>
+                  <span class="font-code-meta text-code-meta text-on-surface-variant">skillszen.app</span>
+                  <span class="font-code-meta text-code-meta text-secondary font-bold">Case Study</span>
+                </div>
+                <img
+                  src="/images/projects/skillszen-mockup.png"
+                  alt="SkillsZen Platform Preview"
+                  class="w-full aspect-[16/10] object-cover object-top block"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+            <div>
+              <a
+                routerLink="/projects/skillszen"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary-container transition-colors shadow-xs"
+              >
+                <span>View Case Study</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- PROJECT 03: Finance Dashboard -->
+      @if (selectedCategory() === 'all' || selectedCategory() === 'apps') {
+        <div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden shadow-sm flex flex-col justify-between group hover:border-secondary transition-all">
+          <div class="p-6 md:p-8">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-code-meta text-code-meta px-2.5 py-1 bg-surface-container-low text-primary font-bold rounded">03 // FINTECH PRODUCT</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Wealth Management</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary font-bold mb-2">Finance Dashboard</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Analytical investment dashboard built for private wealth portfolios. Focuses on granular asset-allocation telemetry, live performance charts, and reactive market watchlists.
+            </p>
+            <div class="flex flex-wrap items-center gap-2 mb-6">
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">Angular</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">Data Charting</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">REST APIs</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded-md font-code-meta text-code-meta text-primary font-medium">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="px-6 md:px-8 pb-6 md:pb-8 flex flex-col gap-4">
+            <a routerLink="/projects/finance-dashboard" class="block group/frame">
+              <div class="rounded-xl overflow-hidden bg-surface-container border border-surface-variant/80 shadow-sm flex flex-col transition-transform duration-300 group-hover/frame:scale-[1.01]">
+                <div class="flex items-center justify-between px-3 py-2 bg-surface-container-low border-b border-surface-variant/80">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                  </div>
+                  <span class="font-code-meta text-code-meta text-on-surface-variant">finance-telemetry.internal</span>
+                  <span class="font-code-meta text-code-meta text-secondary font-bold">Case Study</span>
+                </div>
+                <img
+                  src="/images/projects/finance-mockup.png"
+                  alt="Finance Dashboard Platform Preview"
+                  class="w-full aspect-[16/10] object-cover object-top block"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+            <div>
+              <a
+                routerLink="/projects/finance-dashboard"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary-container transition-colors shadow-xs"
+              >
+                <span>View Case Study</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
   </div>
 </section>
 
-<!-- Featured project teaser -->
-<section id="projects" class="shell section">
-  <app-featured-repo [project]="featured" />
+<!-- ========================================== -->
+<!-- 03. CAPABILITIES / SERVICES SECTION       -->
+<!-- ========================================== -->
+<section class="w-full py-16 md:py-24 max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop" id="services">
+  <div class="flex flex-col mb-12 md:mb-16">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="w-2.5 h-2.5 bg-secondary-fixed rounded-sm"></span>
+      <span class="font-code-meta text-code-meta uppercase tracking-wider text-on-surface-variant font-bold">CAPABILITIES</span>
+    </div>
+    <h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">What I can build for you.</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1 leading-relaxed">
+      End-to-end development services tailored for discerning founders, hospitality businesses, and engineering teams.
+    </p>
+  </div>
+
+  <!-- Editorial Service Blocks -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- SERVICE 01 -->
+    <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant shadow-sm flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <span class="font-headline-md text-headline-md text-primary font-bold">01</span>
+          <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[20px]">storefront</span>
+          </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">Business Websites</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+          Modern websites for cafes, restaurants and businesses that help present services, build trust and connect with customers effortlessly.
+        </p>
+      </div>
+      <div class="pt-6 bg-surface-container-low -mx-8 -mb-8 p-8 rounded-b-2xl border-t border-surface-variant">
+        <span class="font-code-meta text-code-meta uppercase text-primary font-bold block mb-3">Deliverables &amp; Focus</span>
+        <ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Bespoke Design Systems</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Headless CMS Integration</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Local SEO &amp; Lightning Fast Loading</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Mobile-First Ordering &amp; Bookings</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SERVICE 02 -->
+    <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant shadow-sm flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <span class="font-headline-md text-headline-md text-primary font-bold">02</span>
+          <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+          </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">Web Applications</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+          Interactive digital products, client dashboards and functional web applications built rigorously around real customer needs and operational data.
+        </p>
+      </div>
+      <div class="pt-6 bg-surface-container-low -mx-8 -mb-8 p-8 rounded-b-2xl border-t border-surface-variant">
+        <span class="font-code-meta text-code-meta uppercase text-primary font-bold block mb-3">Deliverables &amp; Focus</span>
+        <ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Complex State Architecture</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> High-Density Dashboards</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Authentication &amp; Role Security</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Scalable REST &amp; SQL APIs</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SERVICE 03 -->
+    <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant shadow-sm flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <span class="font-headline-md text-headline-md text-primary font-bold">03</span>
+          <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-[20px]">code</span>
+          </div>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">Frontend Engineering</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+          Responsive, resilient, and maintainable web solutions coded with strict TypeScript and modern frameworks that stand the test of time.
+        </p>
+      </div>
+      <div class="pt-6 bg-surface-container-low -mx-8 -mb-8 p-8 rounded-b-2xl border-t border-surface-variant">
+        <span class="font-code-meta text-code-meta uppercase text-primary font-bold block mb-3">Deliverables &amp; Focus</span>
+        <ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Clean Semantic Codebases</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Next.js SSR &amp; Angular Architecture</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Rigorous Lighthouse 95+ Audit</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Cross-Browser Rigidity &amp; Testing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Contact CTA -->
-<section id="home-contact" class="shell section contact">
-  <h2 class="contact-title">
-    Let's build something <span class="accent">exceptional</span> together.
-  </h2>
-  <p class="contact-copy">
-    Currently open to freelance opportunities, full-stack roles, and interesting open-source
-    collaborations.
-  </p>
-  <div class="contact-actions">
-    <a hlmBtn size="lg" class="cta-primary" routerLink="/contact">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path
-          d="M4 6h16v12H4zM4 7l8 6 8-6"
-          stroke="currentColor"
-          stroke-width="1.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-      Email Mikhail
-    </a>
-    <a
-      hlmBtn
-      variant="secondary"
-      size="lg"
-      class="cta-telegram"
-      [href]="social('telegram')?.url"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path
-          d="M21.5 3.5 2.8 11.1c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.7.4 1 1 1 .6 0 .9-.3 1.2-.6l2.8-2.7 5.8 4.3c1.1.6 1.8.3 2.1-1l3.4-16c.4-1.4-.5-2-1.8-1.5z"
-        />
-      </svg>
-      Telegram
-    </a>
+<!-- ========================================== -->
+<!-- 04. ABOUT SECTION                          -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-low/70 py-16 md:py-24 border-y border-surface-variant/60" id="about">
+  <div class="max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <!-- Left Column: Geometric Profile Badge Card -->
+      <div class="lg:col-span-5 flex flex-col">
+        <div class="bg-surface-container-lowest p-8 rounded-2xl border border-surface-variant shadow-sm">
+          <div class="w-24 h-24 rounded-2xl bg-primary text-on-primary flex items-center justify-center mb-6 shadow-md relative">
+            <span class="font-headline-lg text-headline-lg font-bold">M</span>
+            <span class="absolute bottom-2 right-2 w-3.5 h-3.5 rounded-full bg-secondary-fixed shadow-[0_0_8px_rgba(198,242,106,0.9)]"></span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary font-bold">Mikhail</h3>
+          <p class="font-body-md text-body-md text-secondary font-medium mb-6">Independent Web Developer &amp; UI Engineer</p>
+
+          <div class="space-y-3 pt-6 bg-surface-container-low -mx-8 -mb-8 p-8 rounded-b-2xl border-t border-surface-variant font-body-sm text-body-sm">
+            <div class="flex justify-between items-center">
+              <span class="text-on-surface-variant font-code-meta text-code-meta">LOCATION:</span>
+              <span class="text-primary font-semibold">Gomel, Belarus (UTC+3)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-on-surface-variant font-code-meta text-code-meta">ENGAGEMENT:</span>
+              <span class="text-primary font-semibold">Direct Contract / Remote</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-on-surface-variant font-code-meta text-code-meta">SPECIALIZATION:</span>
+              <span class="text-primary font-semibold">Hospitality, SaaS, Web Apps</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-on-surface-variant font-code-meta text-code-meta">STATUS:</span>
+              <span class="inline-flex items-center gap-1.5 text-secondary font-bold">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span> Accepting Q2 projects
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Narrative & Philosophy -->
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2.5 h-2.5 bg-secondary-fixed rounded-sm"></span>
+          <span class="font-code-meta text-code-meta uppercase tracking-wider text-on-surface-variant font-bold">BACKGROUND &amp; ETHOS</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg text-primary font-bold mb-6 tracking-tight">A little about me.</h2>
+        <div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+          <p>
+            I'm Mikhail, an independent web developer focused on building thoughtful digital experiences. I combine modern frontend technologies with uncompromising attention to design, typography, usability, and speed to create products that look great and work reliably.
+          </p>
+          <p class="font-body-md text-body-md">
+            Every project begins with understanding your commercial objectives. I don't rely on bloated, slow site builders or heavy external dependencies. Instead, I write clean, hand-crafted code structured to give your business an enduring competitive advantage online.
+          </p>
+          <p class="font-body-md text-body-md italic text-primary/80 border-l-2 border-secondary-fixed pl-4">
+            «Моя цель — помочь вашему делу выделиться за счёт чистого дизайна, безупречной функциональности и высокой скорости работы.»
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-primary-container transition-all shadow-xs"
+            routerLink="/"
+            fragment="contact"
+          >
+            <span>Work with me</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+          <a
+            class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1"
+            routerLink="/"
+            fragment="process"
+          >
+            <span>See development process</span>
+            <span class="material-symbols-outlined text-[16px]">east</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- 05. PROCESS / METHODOLOGY SECTION         -->
+<!-- ========================================== -->
+<section class="w-full py-16 md:py-24 max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop" id="process">
+  <div class="flex flex-col mb-12 md:mb-16">
+    <div class="flex items-center gap-2 mb-2">
+      <span class="w-2.5 h-2.5 bg-secondary-fixed rounded-sm"></span>
+      <span class="font-code-meta text-code-meta uppercase tracking-wider text-on-surface-variant font-bold">METHODOLOGY</span>
+    </div>
+    <h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">From idea to launch.</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-1 leading-relaxed">
+      A clear, transparent four-step progression designed for clarity, agility, and measurable commercial results.
+    </p>
+  </div>
+
+  <!-- 4 Stages in Horizontal Pipeline -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Stage 01 -->
+    <div class="p-6 bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between group hover:border-secondary transition-all">
+      <div>
+        <span class="font-headline-md text-headline-md font-bold text-secondary block mb-4">01</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">Discovery</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Understanding the business, user archetypes, commercial goals, and core technical requirements.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-6 rounded-b-xl border-t border-surface-variant flex items-center justify-between">
+        <span class="font-code-meta text-code-meta text-on-surface-variant uppercase font-bold">Phase 1: Briefing</span>
+        <span class="material-symbols-outlined text-secondary text-[18px]">search</span>
+      </div>
+    </div>
+
+    <!-- Stage 02 -->
+    <div class="p-6 bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between group hover:border-secondary transition-all">
+      <div>
+        <span class="font-headline-md text-headline-md font-bold text-secondary block mb-4">02</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">Design</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Creating the spatial structure, typography hierarchy, visual direction, and responsive user flow.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-6 rounded-b-xl border-t border-surface-variant flex items-center justify-between">
+        <span class="font-code-meta text-code-meta text-on-surface-variant uppercase font-bold">Phase 2: Prototypes</span>
+        <span class="material-symbols-outlined text-secondary text-[18px]">palette</span>
+      </div>
+    </div>
+
+    <!-- Stage 03 -->
+    <div class="p-6 bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between group hover:border-secondary transition-all">
+      <div>
+        <span class="font-headline-md text-headline-md font-bold text-secondary block mb-4">03</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">Development</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Building the responsive frontend with clean semantic markup, APIs, and fluid animations.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-6 rounded-b-xl border-t border-surface-variant flex items-center justify-between">
+        <span class="font-code-meta text-code-meta text-on-surface-variant uppercase font-bold">Phase 3: Coding</span>
+        <span class="material-symbols-outlined text-secondary text-[18px]">data_object</span>
+      </div>
+    </div>
+
+    <!-- Stage 04 -->
+    <div class="p-6 bg-surface-container-lowest rounded-xl border border-surface-variant shadow-sm flex flex-col justify-between group hover:border-secondary transition-all">
+      <div>
+        <span class="font-headline-md text-headline-md font-bold text-secondary block mb-4">04</span>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-2">Launch</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Rigorous cross-device testing, SEO meta configuration, Lighthouse optimization, and domain deployment.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 bg-surface-container-low -mx-6 -mb-6 p-6 rounded-b-xl border-t border-surface-variant flex items-center justify-between">
+        <span class="font-code-meta text-code-meta text-on-surface-variant uppercase font-bold">Phase 4: Release</span>
+        <span class="material-symbols-outlined text-secondary text-[18px]">rocket_launch</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- 06. TECH VAULT SECTION                     -->
+<!-- ========================================== -->
+<section class="w-full bg-surface-container-low/60 py-16 md:py-24 border-y border-surface-variant/60" id="stack">
+  <div class="max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop">
+    <div class="flex flex-col mb-12">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2.5 h-2.5 bg-secondary-fixed rounded-sm"></span>
+        <span class="font-code-meta text-code-meta uppercase tracking-wider text-on-surface-variant font-bold">TECH VAULT</span>
+      </div>
+      <h2 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">Tools I work with.</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-1 leading-relaxed">
+        A curated toolkit focused on speed, maintainability, and developer ergonomics.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Frontend -->
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm">
+        <span class="font-code-meta text-code-meta text-secondary uppercase font-bold block mb-4">01 // FRONTEND</span>
+        <div class="flex flex-col gap-2.5 font-headline-sm text-headline-sm font-semibold text-primary">
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>React</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">v19</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Next.js</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">App Router</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Angular</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Standalone</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>TypeScript</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Strict</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Styling -->
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm">
+        <span class="font-code-meta text-code-meta text-secondary uppercase font-bold block mb-4">02 // STYLING &amp; MOTION</span>
+        <div class="flex flex-col gap-2.5 font-headline-sm text-headline-sm font-semibold text-primary">
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Tailwind CSS</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">v4</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>CSS Modules</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Scoped</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Micro-Animations</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Fluid</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Responsive UI</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Mobile 1st</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend & APIs -->
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm">
+        <span class="font-code-meta text-code-meta text-secondary uppercase font-bold block mb-4">03 // BACKEND &amp; DATA</span>
+        <div class="flex flex-col gap-2.5 font-headline-sm text-headline-sm font-semibold text-primary">
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Node.js</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Runtime</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Express</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">REST APIs</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Prisma</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">ORM</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>PostgreSQL</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">SQL Vault</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tooling & Workflow -->
+      <div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-sm">
+        <span class="font-code-meta text-code-meta text-secondary uppercase font-bold block mb-4">04 // TOOLING &amp; DEPLOY</span>
+        <div class="flex flex-col gap-2.5 font-headline-sm text-headline-sm font-semibold text-primary">
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Git &amp; GitHub</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">CI/CD</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Figma</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Tokens</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Vercel / Netlify</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Edge CDN</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+            <span>Vite / Angular CLI</span>
+            <span class="font-code-meta text-code-meta text-on-surface-variant">Build</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- 07. CONTACT SECTION                        -->
+<!-- ========================================== -->
+<section class="w-full py-16 md:py-24 max-w-[1280px] mx-auto px-gutter md:px-gutter-desktop" id="contact">
+  <div class="bg-surface-container-lowest rounded-3xl p-8 md:p-14 lg:p-16 border border-surface-variant shadow-sm overflow-hidden relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-8 flex flex-col items-start">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed/30 rounded-full mb-4">
+          <span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">PROJECT INQUIRIES</span>
+        </div>
+        <h2 class="font-headline-lg text-headline-lg md:text-[3.5rem] font-bold text-primary tracking-tight mb-4 leading-tight">
+          Have a project in mind?
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8 leading-relaxed">
+          Let's discuss your idea and turn it into something useful, functional, and visually memorable. Currently taking on select projects for Q2/Q3 2025.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 mb-8">
+          <a
+            class="inline-flex items-center gap-2 px-6 py-3.5 bg-secondary-fixed text-primary font-headline-sm text-label-md font-bold rounded-lg shadow-sm hover:opacity-90 active:scale-[0.99] transition-all"
+            [href]="social('telegram')?.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Start a conversation</span>
+            <span class="material-symbols-outlined text-[18px]">send</span>
+          </a>
+          <a
+            class="inline-flex items-center gap-2 px-6 py-3.5 bg-surface-container text-primary font-headline-sm text-label-md font-semibold rounded-lg hover:bg-surface-container-high active:scale-[0.99] transition-colors"
+            [href]="social('email')?.url"
+          >
+            <span>{{ profile.socials[3].url.replace('mailto:', '') }}</span>
+            <span class="material-symbols-outlined text-[18px]">mail</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2 text-on-surface-variant font-code-meta text-code-meta">
+          <span class="material-symbols-outlined text-secondary text-[16px]">schedule</span>
+          <span>Typical response window: within 24 hours</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 flex flex-col gap-4">
+        <div class="p-6 bg-surface-container-low rounded-2xl border border-surface-variant flex flex-col gap-4">
+          <span class="font-code-meta text-code-meta text-primary font-bold uppercase tracking-wider">DIRECT CHANNELS</span>
+          <a
+            class="flex items-center justify-between p-3.5 bg-surface-container-lowest rounded-xl border border-surface-variant/60 hover:border-secondary transition-colors"
+            [href]="social('telegram')?.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
+              <div>
+                <span class="font-label-sm text-label-sm text-on-surface-variant block font-bold">TELEGRAM</span>
+                <span class="font-headline-sm text-body-md font-bold text-primary">&#64;Itschebupelli</span>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-on-surface-variant text-[18px]">north_east</span>
+          </a>
+
+          <a
+            class="flex items-center justify-between p-3.5 bg-surface-container-lowest rounded-xl border border-surface-variant/60 hover:border-secondary transition-colors"
+            [href]="social('email')?.url"
+          >
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary text-[20px]">alternate_email</span>
+              <div>
+                <span class="font-label-sm text-label-sm text-on-surface-variant block font-bold">EMAIL</span>
+                <span class="font-headline-sm text-body-md font-bold text-primary">{{ profile.socials[3].url.replace('mailto:', '') }}</span>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-on-surface-variant text-[18px]">north_east</span>
+          </a>
+
+          <div class="p-3 bg-surface-container-lowest rounded-xl border border-surface-variant/60 flex items-center justify-between">
+            <span class="font-code-meta text-code-meta text-on-surface-variant font-bold">LOCATION</span>
+            <span class="font-code-meta text-code-meta text-primary font-bold">Gomel, BY · UTC+3</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

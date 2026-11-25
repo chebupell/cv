@@ -165,6 +165,24 @@ ORDER BY total DESC;`,
   ],
   projects: [
     {
+      name: 'BÉRÉG',
+      description:
+        'A conceptual web experience for a modern European restaurant, combining refined editorial design, interactive menu presentation and a responsive reservation experience.',
+      highlights: ['Editorial aesthetics', 'Interactive menu catalog', 'Real-time reservation modal'],
+      tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      repoUrl: 'https://github.com/chebupell',
+      demoUrl: 'https://bereg-coral.vercel.app',
+      language: 'TypeScript',
+      stars: 8,
+      forks: 2,
+      featured: true,
+      snippetTitle: 'MenuCatalog.tsx',
+      snippet: `export function MenuCatalog() {
+  const [category, setCategory] = useState<'tasting' | 'carte' | 'wine'>('tasting');
+  return <MenuFilter active={category} onSelect={setCategory} />;
+}`,
+    },
+    {
       name: 'SkillsZen',
       description:
         'An interactive learning platform designed for mastering TypeScript, JavaScript, and algorithms with AI-powered assistance.',
